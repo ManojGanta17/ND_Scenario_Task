@@ -1,0 +1,2 @@
+# Spark Submit Command
+spark-submit --master local --name MovieRatingsApp dataframe.py

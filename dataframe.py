@@ -66,8 +66,9 @@ movies_df.write.mode("overwrite").parquet("movies.parquet")
 ratings_df.write.mode("overwrite").parquet("ratings.parquet")
 
 # Write the new DataFrame to Parquet format
-movie_ratings_df.write.mode("overwrite").parquet("movie_ratings_df.parquet")
-user_top_three_movies_df.write.mode("overwrite").parquet("user_top_three_movies.parquet")
+
+movie_ratings_df.coalesce(1).write.mode("overwrite").parquet("movie_ratings_df.parquet")
+user_top_three_movies_df.coalesce(1).write.mode("overwrite").parquet("user_top_three_movies.parquet")
 
 # Spark Submit Command
 # spark-submit --master local --name MovieRatingsApp dataframe.py
