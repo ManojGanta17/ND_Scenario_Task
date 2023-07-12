@@ -61,9 +61,7 @@ user_top_three_movies_df = ranked_df.join(movies_df, "movieId")
 # Show the resulting DataFrame
 user_top_three_movies_df.show()
 
-# Read the original DataFrames (movies_df and ratings_df) and perform necessary transformations
-
-# Write the original DataFrame to Parquet format
+# Task-4 Write the original DataFrame to Parquet format
 movies_df.write.mode("overwrite").parquet("movies.parquet")
 ratings_df.write.mode("overwrite").parquet("ratings.parquet")
 
